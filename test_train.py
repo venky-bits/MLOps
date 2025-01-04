@@ -9,13 +9,13 @@ import pytest
 
 
 def test_data_loading():
-    df = pd.read_csv('/Users/venkateshraman/BITS Pilani - M.Tech AI&ML/Semester 3/MLOps/Assignment 1/MLOps/data/500Hits.csv', encoding='Latin 1')
+    df = pd.read_csv('data/500Hits.csv', encoding='Latin 1')
     assert not df.empty, "Dataframe is empty"
     assert 'PLAYER' in df.columns, "Expected column 'PLAYER' not found"
     assert 'CS' in df.columns, "Expected column 'CS' not found"
 
 def test_data_splitting():
-    df = pd.read_csv('/Users/venkateshraman/BITS Pilani - M.Tech AI&ML/Semester 3/MLOps/Assignment 1/MLOps/data/500Hits.csv', encoding='Latin 1')
+    df = pd.read_csv('data/500Hits.csv', encoding='Latin 1')
     df = df.drop(columns=['PLAYER', 'CS'])
     X = df.iloc[:, 0:13]
     y = df.iloc[:, 13]
@@ -26,7 +26,7 @@ def test_data_splitting():
     assert len(y_test) > 0, "Test labels are empty"
 
 def test_model_training():
-    df = pd.read_csv('/Users/venkateshraman/BITS Pilani - M.Tech AI&ML/Semester 3/MLOps/Assignment 1/MLOps/data/500Hits.csv', encoding='Latin 1')
+    df = pd.read_csv('data/500Hits.csv', encoding='Latin 1')
     df = df.drop(columns=['PLAYER', 'CS'])
     X = df.iloc[:, 0:13]
     y = df.iloc[:, 13]
@@ -38,7 +38,7 @@ def test_model_training():
     assert knn, "Model training failed"
 
 def test_model_prediction():
-    df = pd.read_csv('/Users/venkateshraman/BITS Pilani - M.Tech AI&ML/Semester 3/MLOps/Assignment 1/MLOps/data/500Hits.csv', encoding='Latin 1')
+    df = pd.read_csv('data/500Hits.csv', encoding='Latin 1')
     df = df.drop(columns=['PLAYER', 'CS'])
     X = df.iloc[:, 0:13]
     y = df.iloc[:, 13]
@@ -52,7 +52,7 @@ def test_model_prediction():
     assert len(y_pred) == len(y_test), "Prediction length mismatch"
 
 def test_evaluation_metrics():
-    df = pd.read_csv('/Users/venkateshraman/BITS Pilani - M.Tech AI&ML/Semester 3/MLOps/Assignment 1/MLOps/data/500Hits.csv', encoding='Latin 1')
+    df = pd.read_csv('data/500Hits.csv', encoding='Latin 1')
     df = df.drop(columns=['PLAYER', 'CS'])
     X = df.iloc[:, 0:13]
     y = df.iloc[:, 13]
