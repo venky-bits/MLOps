@@ -6,7 +6,7 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 
 # Load the data
-df = pd.read_csv('/Users/venkateshraman/BITS Pilani - M.Tech AI&ML/Semester 3/MLOps/Assignment 1/MLOps-Assignment-1/data/500Hits.csv', encoding = 'Latin 1')
+df = pd.read_csv('/Users/venkateshraman/BITS Pilani - M.Tech AI&ML/Semester 3/MLOps/Assignment 1/MLOps/data/500Hits.csv', encoding = 'Latin 1')
 
 # Observing the data
 print('\n Observing the data')
