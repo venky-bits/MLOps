@@ -6,17 +6,22 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import confusion_matrix, classification_report
 import pytest
 
-
 def test_data_loading():
+    current_directory = os.getcwd()
+    print(current_directory)
+    file_path = os.path.join(current_directory, 'data/500Hits.csv')
+    print(file_path)
     file_path = os.path.join('data', '500Hits.csv')
     df = pd.read_csv(file_path, encoding='Latin 1')
     assert not df.empty, "Dataframe is empty"
     assert 'PLAYER' in df.columns, "Expected column 'PLAYER' not found"
     assert 'CS' in df.columns, "Expected column 'CS' not found"
 
-
 def test_data_splitting():
-    file_path = os.path.join('data', '500Hits.csv')
+    current_directory = os.getcwd()
+    print(current_directory)
+    file_path = os.path.join(current_directory, 'data/500Hits.csv')
+    print(file_path)
     df = pd.read_csv(file_path, encoding='Latin 1')
     df = df.drop(columns=['PLAYER', 'CS'])
     X = df.iloc[:, 0:13]
@@ -27,9 +32,11 @@ def test_data_splitting():
     assert len(y_train) > 0, "Training labels are empty"
     assert len(y_test) > 0, "Test labels are empty"
 
-
 def test_model_training():
-    file_path = os.path.join('data', '500Hits.csv')
+    current_directory = os.getcwd()
+    print(current_directory)
+    file_path = os.path.join(current_directory, 'data/500Hits.csv')
+    print(file_path)
     df = pd.read_csv(file_path, encoding='Latin 1')
     df = df.drop(columns=['PLAYER', 'CS'])
     X = df.iloc[:, 0:13]
@@ -41,9 +48,11 @@ def test_model_training():
     knn.fit(X_train, y_train)
     assert knn, "Model training failed"
 
-
 def test_model_prediction():
-    file_path = os.path.join('data', '500Hits.csv')
+    current_directory = os.getcwd()
+    print(current_directory)
+    file_path = os.path.join(current_directory, 'data/500Hits.csv')
+    print(file_path)
     df = pd.read_csv(file_path, encoding='Latin 1')
     df = df.drop(columns=['PLAYER', 'CS'])
     X = df.iloc[:, 0:13]
@@ -57,9 +66,11 @@ def test_model_prediction():
     y_pred = knn.predict(X_test)
     assert len(y_pred) == len(y_test), "Prediction length mismatch"
 
-
 def test_evaluation_metrics():
-    file_path = os.path.join('data', '500Hits.csv')
+    current_directory = os.getcwd()
+    print(current_directory)
+    file_path = os.path.join(current_directory, 'data/500Hits.csv')
+    print(file_path)
     df = pd.read_csv(file_path, encoding='Latin 1')
     df = df.drop(columns=['PLAYER', 'CS'])
     X = df.iloc[:, 0:13]

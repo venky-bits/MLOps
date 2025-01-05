@@ -5,7 +5,9 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.metrics import confusion_matrix, classification_report
 
-file_path = os.path.join('data', '500Hits.csv')
+current_directory = os.getcwd()
+file_path = os.path.join(current_directory, 'data/500Hits.csv')
+print("Data file path::", file_path)
 # Load the data
 df = pd.read_csv(file_path, encoding='Latin 1')
 
