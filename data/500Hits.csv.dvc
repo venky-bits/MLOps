@@ -1,0 +1,5 @@
+outs:
+- md5: 6a70c8bf4ca9f7ddbd0d94196fcacde8
+  size: 34825
+  hash: md5
+  path: 500Hits.csv
