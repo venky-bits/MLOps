@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/venkateshraman/BITS%20Pilani%20-%20M.Tech%20AI%26ML/Semester%203/MLOps/Assignment%201/MLOps/mlruns/0/4a60c818725e421aa61e620756267495/artifacts
+end_time: 1736084018039
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4a60c818725e421aa61e620756267495
+run_name: KNN_model_n_neighbors_3_050125190336
+run_uuid: 4a60c818725e421aa61e620756267495
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736084016843
+status: 3
+tags: []
+user_id: venkateshraman

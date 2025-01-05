@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/venkateshraman/BITS%20Pilani%20-%20M.Tech%20AI%26ML/Semester%203/MLOps/Assignment%201/MLOps/mlruns/0/c19c5bd3a4de4324856824f049c8b152/artifacts
+deleted_time: 1736083647300
+end_time: 1736083440938
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: c19c5bd3a4de4324856824f049c8b152
+run_name: whimsical-swan-987
+run_uuid: c19c5bd3a4de4324856824f049c8b152
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736083439801
+status: 3
+tags: []
+user_id: venkateshraman

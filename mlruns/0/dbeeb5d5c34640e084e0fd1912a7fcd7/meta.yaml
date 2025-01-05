@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/venkateshraman/BITS%20Pilani%20-%20M.Tech%20AI%26ML/Semester%203/MLOps/Assignment%201/MLOps/mlruns/0/dbeeb5d5c34640e084e0fd1912a7fcd7/artifacts
+end_time: 1736083657404
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: dbeeb5d5c34640e084e0fd1912a7fcd7
+run_name: grandiose-cod-860
+run_uuid: dbeeb5d5c34640e084e0fd1912a7fcd7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1736083656415
+status: 3
+tags: []
+user_id: venkateshraman
