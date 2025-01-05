@@ -1,0 +1,4 @@
+[core]
+    remote = mylocal
+['remote "mylocal"']
+    url = /Users/venkateshraman/BITS Pilani - M.Tech AI&ML/Semester 3/MLOps/Assignment 1/dvc-local
