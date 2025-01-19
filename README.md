@@ -8,8 +8,8 @@ Python files have been appended with the assignment module # for which the progr
 
 1. Clone the repository:
     ```sh
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone git@github.com:venky-bits/MLOps.git
+    cd MLOps
     ```
 
 2. Install the required dependencies:
