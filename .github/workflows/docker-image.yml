@@ -1,0 +1,29 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag flask-model-api:latest
+    - name: Deploy to Azure VM
+      uses: appleboy/ssh-action@v0.1.5
+      with:
+        host: ${{ secrets.AZURE_VM_HOST }}
+        username: ${{ secrets.AZURE_VM_USERNAME }}
+        key: ${{ secrets.AZURE_VM_SSH_KEY }}
+        script: |
+          docker pull flask-model-api:latest
+          docker stop flask-model-api || true
+          docker rm flask-model-api || true
+          docker run -d --name flask-model-api -p 80:80 flask-model-api:latest
