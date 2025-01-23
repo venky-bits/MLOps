@@ -36,7 +36,7 @@ jobs:
         script: |
           # Log into Docker (optional if using a private registry)
           docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-          docker pull flask-model-api:latest
+          docker pull ${{ secrets.DOCKER_USERNAME }}/flask-model-api:latest
           docker stop flask-model-api || true
           docker rm flask-model-api || true
           docker run -d --name flask-model-api -p 80:80 flask-model-api:latest
