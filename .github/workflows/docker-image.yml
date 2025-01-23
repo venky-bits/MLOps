@@ -39,4 +39,4 @@ jobs:
           docker pull ${{ secrets.DOCKER_USERNAME }}/flask-model-api:latest
           docker stop flask-model-api || true
           docker rm flask-model-api || true
-          docker run -d --name flask-model-api -p 80:80 ${{ secrets.DOCKER_USERNAME }}/flask-model-api:latest
+          docker run -d --name flask-model-api -p 5001:5001 ${{ secrets.DOCKER_USERNAME }}/flask-model-api:latest
