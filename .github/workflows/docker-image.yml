@@ -3,7 +3,7 @@ name: Docker Image CI
 on:
   workflow_run:
     workflows:
-      - Python applicaton  # Setting dependency on the first workflow
+      - Python application  # Setting dependency on the first workflow
     types:
       - completed  # Trigger when the first workflow is completed
 
