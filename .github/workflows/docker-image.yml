@@ -17,6 +17,16 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag flask-model-api:latest
+    - name: Log in to Docker Hub 
+      run: |
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+
+    # Step 4: Push Docker image to Docker Hub or Azure Container Registry (optional)
+    # Uncomment this step if using a registry
+    - name: Push Docker Image to Docker Hub 
+      run: |
+        docker tag flask-model-api:latest ${{ secrets.DOCKER_USERNAME }}/flask-model-api:latest
+        docker push ${{ secrets.DOCKER_USERNAME }}/flask-model-api:latest
     - name: Deploy to Azure VM
       uses: appleboy/ssh-action@v0.1.5
       with:
@@ -24,6 +34,8 @@ jobs:
         username: ${{ secrets.AZURE_VM_USERNAME }}
         key: ${{ secrets.AZURE_VM_SSH_KEY }}
         script: |
+          # Log into Docker (optional if using a private registry)
+          docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
           docker pull flask-model-api:latest
           docker stop flask-model-api || true
           docker rm flask-model-api || true
