@@ -1,14 +1,17 @@
 name: Docker Image CI
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+  workflow_run:
+    workflows:
+      - Python applicaton  # Setting dependency on the first workflow
+    types:
+      - completed  # Trigger when the first workflow is completed
+
 
 jobs:
 
-  build:
+  dependent-job:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}  # Ensure it runs only if the first workflow succeeds
 
     runs-on: ubuntu-latest
     environment: Azure VM
@@ -21,7 +24,7 @@ jobs:
       run: |
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
 
-    # Step 4: Push Docker image to Docker Hub or Azure Container Registry (optional)
+    # Push Docker image to Docker Hub or Azure Container Registry (optional)
     # Uncomment this step if using a registry
     - name: Push Docker Image to Docker Hub 
       run: |
